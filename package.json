@@ -1,0 +1,22 @@
+{
+  "name": "github-actions-hands-on",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/calculator.test.js" ,
+    "build": "echo 'Build successful' && mkdir -p dist & touch dist/app.bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masa-0314/github-actions-hands-on.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/masa-0314/github-actions-hands-on/issues"
+  },
+  "homepage": "https://github.com/masa-0314/github-actions-hands-on#readme"
+}
