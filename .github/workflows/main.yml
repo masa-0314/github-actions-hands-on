@@ -1,0 +1,36 @@
+# ワークフロー名：GitHub Actions のUIに表示される名前
+name: 1-3 Hello World Test Workflow
+
+# ワークフローの実行トリガーを定義
+on:
+ #1.手動実行を可能にする設定
+ workflow_dispatch:
+ #2.mainブランチへのpushをトリガーに含める
+ push:
+  branches:
+   - main
+
+# 実行するジョブ(処理のまとまり)を定義
+jobs:
+ # ジョブ名：say_hello
+ say_helo:
+  #ジョブを実行する仮想環境(ランナー)のOSを指定
+  runs-on: ubuntu-latest
+
+  # 実行するステップ(処理の最小単位)を定義
+  steps:
+   # ステップ１: リポジトリのコードをランナー上にチェックアウト
+   - name: Checkout Code
+     uses: actions/checkout@v4
+   
+   # ステップ２: シングルラインのシェルコマンドを実行
+   - name: Run a one-line script
+     # run キーワードの後にシェルコマンドを記述
+     run: echo "Hello, world! This is my first GitHub Action."
+   
+   # ステップ３: マルチラインのシェルコマンドを実行
+   - name: Run a multi-line script
+     run: |
+      echo "This job is runnning on runner ${{ runner.os }}"
+      echo "The repository is ${{ github.repository }}"
+      echo "Current commit SHA is ${{ github.sha }}"
